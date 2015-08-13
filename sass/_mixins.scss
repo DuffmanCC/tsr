@@ -1,0 +1,63 @@
+//border
+@mixin border($border, $color){
+	border: $border solid $color;
+}
+
+//title
+@mixin title($color){
+	.title{
+		color: $color;
+		@include text-shadow;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: $secondary-font;
+	}
+	h1{
+		@extend .title;
+		font-size: 4rem;
+		line-height: 4rem;
+	}
+	h2{
+		@extend .title;
+		font-size: 3rem;
+		line-height: 3rem;
+	}
+	h3{
+		@extend .title;
+		font-size: 2rem;
+		line-height: 2rem;
+	}
+	@media (max-width: 600px){
+		h1{
+			font-size: 3rem;
+			line-height: 3rem;
+		}
+	}
+
+}
+
+//transition hover
+@mixin transition($propiedad, $tiempo){
+	@include transition-property($propiedad);
+	@include transition-duration($tiempo);
+}
+
+//botón
+@mixin btn($color-1, $color-2){
+	color: $color-1;
+	padding: 1rem 2rem;
+	@include border(1px, $color-1);
+	text-transform: uppercase;
+	//font-weight: bold;
+	text-decoration: none;
+	background-color: $color-2;
+	margin: 1rem auto 1rem;
+	display: block;
+	width: 250px;
+	@include border-radius;
+	@include transition(background-color, 1s);
+	&:hover{
+		color: $color-2;
+		background-color: $color-1;
+	}
+}

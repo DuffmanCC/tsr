@@ -1,0 +1,50 @@
+// Colores base
+
+$lightgray      : #819090;
+$gray           : #708284;
+$mediumgray     : #536870;
+$darkgray       : #475B62;
+$darkblue       : #0A2933;
+$darkerblue     : #042029;
+$paleryellow    : #FCF4DC;
+$paleyellow     : #EAE3CB;
+$yellow         : #A57706;
+$orange         : #BD3613;
+$red            : #D11C24;
+$pink           : #C61C6F;
+$purple         : #595AB7;
+$blue           : #2176C7;
+$cyan           : #259286;
+$green          : #738A05;
+$white			: #FFF;
+$black			: #000;
+$transparent	: rgba(0, 0, 0, 0.6);
+
+
+$primary-color: $darkblue;
+
+
+// fuentes
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Ubuntu', sans-serif;
+$third: 'Permanent Marker', cursive;
+
+//transitions
+
+$default-transition-property : all;
+$default-transition-duration : 1s;
+$default-transition-function : false;
+$default-transition-delay    : false;
+
+// text-shadow
+
+$default-text-shadow-color: $orange;
+$default-text-shadow-h-offset: 2px;
+$default-text-shadow-v-offset: 2px;
+$default-text-shadow-blur: 1px;
+$default-text-shadow-spread: false;

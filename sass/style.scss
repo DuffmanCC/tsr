@@ -1,0 +1,603 @@
+/*
+Theme Name: tsr
+Theme URI: http://carlosortiz.co.uk/
+Author: Carlos Ortiz
+Author URI: http://carlosortiz.co.uk/
+Description: Personal Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tsr
+Tags:
+*/
+
+@import 'compass';
+@import 'bootstrap';
+@import 'variables';
+@import 'mixins';
+@import 'base';
+
+
+// MENU
+
+// 1.0 - HEADER
+// 2.0 - NAVIGATION BAR
+// 3.0 - ABOUT SECTION
+// 4.0 - SKILLS SECTION
+// 5.0 - PORTFOLIO SECTION
+// 6.0 - BLOG SECTION
+// 7.0 - CONTACT SECTION
+// 8.0 - FOOTER
+// 9.0 - SINGLE POST
+// 10.0 - COMMENTS
+// 11.0 - SIDEBAR
+// 12.0 - ARCHIVES
+
+
+// ***************** 1.0 - HEADER ******************
+
+#masthead{
+	.header-image img{
+		display: block;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.header-background-image{
+		background: no-repeat center;
+		background-size: cover;
+	}
+	.header-background-image .title-box{
+		background-color: $transparent;
+	}
+	.site-branding{
+		padding: 3rem 1rem 9rem;
+		text-align: center;
+		background-color: $darkblue;
+		@media (max-width: 600px){
+			padding: 0;
+			}
+		.title-box{
+			border: 1px solid $white;
+			padding: 1rem 2rem;
+			width: 650px;
+			max-width: 90%;
+			margin: 0 auto;
+			@include border-radius(5px, $paleyellow);
+			@media (max-width: 37.5rem){
+				border: none;
+				max-width: 100%;
+				width: 100%;
+			}
+			.wp-icon{
+				color: $white;
+				font-size: 7rem;
+				margin: 0;
+			}
+			.site-title{
+				font-weight: 700;
+				font-size: 3.5rem;
+				text-transform: uppercase;
+				line-height: 3.5rem;
+				font-family: $third;
+				margin-top: 0;
+				a{
+					color: $white;
+					text-decoration: none;
+					&:hover{
+						color: darken($white, 20);
+					}
+				}
+				@media (max-width: 470px){
+					font-size: 2.5rem;
+					line-height: 2.5rem;
+				}
+			}
+			.site-description{
+				font-weight: 100;
+				font-size: 2rem;
+				color: $white;
+				padding: .5rem;
+				line-height: 2rem;
+				@media (max-width: 470px){
+					font-size: 1.5rem;
+				}
+			}
+		}		
+	}
+}
+
+// ***************** 2.0 - NAVIGATION BAR ******************
+
+#site-navigation{
+	background-color: transparent;
+	margin-top: -100px;
+	height: 50px;
+	width: 100%;
+	//position: fixed;
+	.menu-toggle{
+		margin: 0 0 0 3px;
+		padding: 0;
+		width: 4rem;
+		height: 4rem;
+		font-size: 3rem;
+		background-color: transparent;
+		color: $white;
+	}
+	ul{
+		margin-left: 0 auto;
+		text-align: center;
+		
+		li{
+			background-color: $transparent;
+			@include border(1px, $paleyellow);
+			@include border-radius(5px);
+			margin: 0 10px;
+			display: inline-block;
+			float: none;
+			z-index: 99;
+			@media (max-width: 37.5rem) {
+				display: block;
+			}
+			@media (max-width: 970px){
+				margin: 0 3px;
+			}
+			a{
+				color: $white;
+				text-transform: uppercase;
+				padding: 1rem 2rem;
+				@include transition-property(background-color, color);
+				@include transition-duration(0.5s);
+				@media (max-width: 970px){
+					padding: 0.7rem 1rem;
+					font-size: 1rem;
+				}
+				&:hover{
+					color: $black;
+					background-color: $white;	
+				}
+			}
+		}
+	}
+}
+
+// ***************** 3.0 ABOUT SECTION ******************
+
+#about-section{
+	@include title($darkblue);
+	background-color: $paleyellow;
+	padding-bottom: 100px;
+	text-align: center;
+	font-size: 1.3rem;
+}
+
+// ***************** 4.0 SKILLS SECTION *****************
+
+#skills-section{
+	padding-bottom: 100px;
+	color: $paleyellow;
+	background-color: lighten($red, 20);
+	@include title(orange);
+	.site-content{
+		text-align: center;
+		font-size: 2rem;
+	}
+	.skill-item{
+		 @include border-radius(5px);
+		 @include transition(background-color, 1s);
+		 @media (max-width: 992px){
+		 	height: 600px;
+		 }	
+		 @media (max-width: 768px){
+		 	height: auto;
+		 }	
+		 padding-bottom: 20px;	 
+		 &:hover{
+		 	background-color: $paleyellow;
+		 	color: $darkblue;
+		 }
+		 .skill-icon{
+		 	font-size: 5rem;
+		 	text-align: center;
+		 	margin: 0rem;
+		 	@include text-shadow;
+		 }
+		 h3{
+		 	font-size: 2rem;
+		 	line-height: 2rem;
+		 	text-align: center;
+		 	margin: 1rem;
+		 	@include text-shadow;
+		 }
+		 .skill-description{
+		 	text-align: center;
+		 }
+	}
+}
+
+// ***************** 5.0 PORTFOLIO SECTION *****************
+
+#portfolio-section{
+	background-color: $paleyellow;
+	@include title($darkblue);
+	padding-bottom: 100px;
+	text-align: center;
+	font-size: 2rem;
+	.work{
+		padding: 20px 0;
+		border-top: 1px solid $darkblue;
+		font-size: 1.5rem;
+		.description{
+			h3{
+				margin-bottom: 0;		
+			}
+		}
+		img{
+			@include border-radius(4px);
+		}
+		.site-content{
+			text-align: center;
+			.smartphone{
+				width: 7.8125%;
+				float: left;
+				margin-right: 2%;
+			}
+			.tablet{
+				width: 18.75%;
+				float: left;
+				margin-right: 2%;
+			}
+			.netbook{
+				width: 25%;
+				float: left;
+				margin-right: 2%;
+			}
+			.desktop{
+				width: 39.0625%;
+				float: left;
+				margin-right: 2%;
+			}
+		}
+		.link{
+			text-align: center;
+			a{
+				@include btn($darkblue, $paleyellow);
+			}
+		}
+	}
+}
+
+
+// ***************** 6.0 BLOG SECTION *****************
+
+#blog-section{
+	background-color: $darkblue;
+	@include title($paleyellow);
+	color: $paleyellow;
+	text-align: center;
+	font-size: 2rem;
+	.button-group{
+		margin-bottom: 50px;
+		text-align: center;
+		button{
+			@include btn($darkblue, $white);	
+			display: inline-block;
+			font-size: 1.5rem;
+		}		
+	}
+	.category-css{
+			background-color: $paleyellow !important;	
+		}
+	.category-php{
+		background-color: lighten($red, 30)!important;
+	}
+	.category-plugins{
+		background-color: lighten($purple, 30)!important;
+	}
+	.category-seo{
+		background-color: lighten($pink, 30)!important;
+	}
+	.category-wordpress{
+		background-color: lighten($blue, 30)!important;
+	}
+	.category-workflow{
+		background-color: lighten($green, 30)!important;
+	}
+	.masonry-grid{
+		margin: 0 auto;
+		@media (min-width: 310px){
+			width: 310px;
+		}
+		@media (min-width: 618px){
+			width: 618px;
+		}
+		@media (min-width: 926px){
+			width: 926px;
+		}
+		@media (min-width: 1234px){
+			width: 1234px;
+		}
+		@media (min-width: 1542px){
+			width: 1542px;
+		}
+		@media (min-width: 1850px){
+			width: 1850px;
+		}
+		.masonry-item{
+			width: 300px;
+			background-color: lighten($green, 20);		
+			margin: 0 0.5rem 0.5rem 0;
+			position: relative;
+			color: $darkblue;
+			overflow: hidden;
+			@include border-radius(5px);
+			p{
+				margin: 0;
+			}
+			a{
+				color: $darkblue;
+				text-decoration: none;
+			}
+			.thumbnail img{
+				width: 100%;
+			}
+			.title{
+				padding: .5rem;
+				color: $darkblue;
+			}
+			.excerpt{
+				padding: .5rem;
+				font-size: 1.2rem;
+			}
+			.date-inner{
+				width: 300px;
+				background-color: $transparent;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				visibility: hidden;	
+				.date{
+					position: absolute;
+					top: 10%;
+					left: 0;
+					right: 0;	
+					color: $paleyellow;
+					background-color: $black;
+					font-size: 1rem;
+					padding: 1rem;
+					@include border-radius(4px);
+					&:hover{
+						text-decoration: underline;
+					}
+				}	
+			}			
+			&:hover .date-inner{
+				visibility: visible;
+			}		
+		}
+	}
+}
+
+// ***************** 7.0 CONTACT SECTION *****************
+
+#contact-section{
+	@include title($darkblue);
+	background-color: $paleyellow;
+	color: $darkblue;
+	padding-bottom: 100px;
+	.wpcf7{
+		p{
+			margin-bottom: 0;
+		}
+		input, textarea{
+			  background: $white;
+			  padding: 25px 20px;
+			  color: #121212;
+			  font-size: 1.5rem;
+			  margin-bottom: 20px;
+			  width: 100%;
+			  border: 1px solid #808080;
+		}
+	}
+	.contact-logos{
+		.col-xs-12{
+		text-align: center;
+		padding: 1rem;
+			i{
+				font-size: 3rem;
+			}
+		}
+	}	
+}
+
+// ***************** 8.0 FOOTER *****************
+#colophon{	
+	background-color: lighten($black, 10);
+	color: darken($white, 10);
+	text-align: center;
+	a i{
+		color: $white;
+		&:hover{
+			color: $blue;
+		}
+		&:visited{
+			color: $white;
+		}
+	}
+	#footer-right{
+		margin: 0;
+		font-size: 3rem;
+	}
+	#footer-left{
+		margin: 0;
+		padding: 20px 15px;
+
+	}
+}
+
+
+// *****************9.0 SINGLE POST *************
+#primary #main{
+	article{
+		margin-left: -15px;
+		.entry-img{
+			margin: 0;
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		.entry-header, .entry-footer{
+			padding-left: 15px;
+		}
+		.entry-header{
+			margin-bottom: 1rem;
+			h1{
+				font-size: 2.5rem;
+				line-height: 2.5rem;
+				text-align: center;
+				background-color: $darkblue;
+				margin: 1rem auto;
+				padding: 1rem;
+				color: $white;
+				@include border-radius(4px);
+				a{
+					text-decoration: none;
+					color: $white;
+				}				
+			}
+			.entry-meta{
+				color: $gray;
+				border-top: 1px solid $gray;
+				border-bottom: 1px solid $gray;
+				padding: 1rem 0;
+				font-size: .9rem;
+				i{
+					color: $gray;
+					font-size: 1.3rem;
+				}
+				span{
+					margin-right: 1rem;
+				}
+				.comment{
+					float: right;
+				}
+			}
+		}
+		.entry-content{
+			margin:0;
+			padding: 15px;
+		}
+		.entry-footer{
+			color: $gray;
+			padding: 1rem 15px;
+			font-size: .9rem;
+			margin-top: 1rem;
+			div.footer{
+				border-top: 1px solid $gray;
+				border-bottom: 1px solid $gray;
+				padding: 1rem 0;
+			}
+			i{
+				color: $gray;
+				font-size: 1.3rem;
+			}
+		}
+	}
+	.navigation{
+		background-color: $darkblue;
+		padding: 1rem;
+		@include border-radius(4px);
+		a {
+			color: $white;
+			text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// *****************10.0 COMMENTS *************
+#comments{
+	font-size: 1rem;
+	ul{
+		margin: 1rem;
+		list-style: none;
+		li article{
+			background-color: $paleyellow;
+			padding: 1rem;
+			margin: 1rem;
+			.comment-meta{
+				img{
+					
+				}
+				.comment-author{
+					.fn{
+						font-size: 1.5rem;
+						
+					}
+				}
+				.comment-metadata{
+					
+				}
+			}
+		}
+	}
+	.submit{
+		@include btn($paleyellow, $darkblue);
+	}
+}
+
+// *****************11.0 SIDEBAR *************
+#secondary.widget-area{
+	color: $white;
+	height: 100%;
+	padding: 5px 20px 20px 20px;
+	background-color: $darkblue;
+	margin-top: 1rem;
+	@include border-radius(4px);
+	a{
+		color: $white;
+	}
+	.widget{
+		padding: 20px;
+		margin: 0;
+		.widget-title{
+			padding-top: 5px;
+			color: $white;
+			border-bottom: 2px solid $white;
+			margin: 0 0 1rem 0;
+		}
+		ul{
+			list-style-type: none;
+			padding-left: 20px;
+			font-size: 17px;
+			margin-left: 0;
+			li a{
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+		.tagcloud{
+			a{
+			text-decoration: none;
+			&:hover{
+				text-decoration: underline;
+				}
+			}
+		}
+	}
+	.widget.widget_categories li a:before{
+		content: '\f115';
+		font-family: 'fontawesome';
+		margin-right: 5px;
+		color: $white;
+	}
+}
+// *****************12.0 ARCHIVES *************
+.page-title{
+	text-align: center;
+}
+
