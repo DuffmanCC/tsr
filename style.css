@@ -2395,6 +2395,10 @@ object {
   font-size: 3rem;
 }
 
+#skypedetectionswf {
+  display: none;
+}
+
 #primary #main article {
   margin-left: -15px;
 }
