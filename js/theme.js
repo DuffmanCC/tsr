@@ -40,6 +40,7 @@ jQuery(document).ready(function($){
 		});
 	});
 
+	$('.header-background-image').css('background-position-y','-250px');
 });
 
 

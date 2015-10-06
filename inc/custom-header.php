@@ -26,7 +26,7 @@ function tsr_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1920,
-		'height'                 => 450,
+		'height'                 => 900,
 		'flex-height'            => false,
 		'wp-head-callback'       => 'tsr_header_style',
 		'admin-head-callback'    => 'tsr_admin_header_style',
